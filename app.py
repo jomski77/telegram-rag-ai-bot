@@ -73,9 +73,9 @@ def start_bot():
     application = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_telegram_messages))
         
-    #loop.create_task(application.run_polling())
-    #loop.run_forever()
-    loop.run_until_complete(application.run_polling())
+    loop.create_task(application.run_polling())
+    loop.run_forever()
+    #loop.run_until_complete(application.run_polling())
 
     logging.info(f"🛠️📡 Telegram bot started.")
 
@@ -100,10 +100,10 @@ def handle_connect():
 
 @app.route('/')
 def index():    
+    start_bot_background()               
     return render_template('index.html')
 
-if __name__ == '__main__':     
-    start_bot_background()           
+if __name__ == '__main__':         
     socketio.run(app, host="0.0.0.0", port=5000, debug=True, allow_unsafe_werkzeug=True)
      
     
