@@ -1,5 +1,5 @@
 
-# Telegram Monitoring and Real-Time Messaging Application  
+## Telegram Monitoring and Real-Time Messaging Application  
 
 This is a Flask-based web application designed to serve as a quick reference guide and messaging platform. The application integrates with Telegram using the python-telegram-bot library and provides real-time communication through Flask-SocketIO. It utilizes Retrieval-Augmented Generation (RAG) to enhance its querying and response capabilities, ensuring that users receive contextually relevant and accurate information derived from embedded documents and resources.
 ---
