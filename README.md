@@ -1,9 +1,7 @@
 
 # Telegram Monitoring and Real-Time Messaging Application  
 
-This is a Flask-based web application designed to serve as a quick reference guide and messaging platform. The application integrates with Telegram using the python-telegram-bot library and provides real-time communication through Flask-SocketIO.
-
-It utilizes Retrieval-Augmented Generation (RAG) to enhance its querying and response capabilities, ensuring that users receive contextually relevant and accurate information derived from embedded documents and resources.
+This is a Flask-based web application designed to serve as a quick reference guide and messaging platform. The application integrates with Telegram using the python-telegram-bot library and provides real-time communication through Flask-SocketIO. It utilizes Retrieval-Augmented Generation (RAG) to enhance its querying and response capabilities, ensuring that users receive contextually relevant and accurate information derived from embedded documents and resources.
 ---
 
 ## Overview  
@@ -22,6 +20,8 @@ It utilizes Retrieval-Augmented Generation (RAG) to enhance its querying and res
     - deepseek-r1:1.5b (or other models)
     - nomic-embed-text
 
+
+
 ## Installing Models in Ollama
 
 After installing Ollama, download the required models using the following commands:
@@ -30,6 +30,7 @@ After installing Ollama, download the required models using the following comman
     ollama pull nomic-embed-text
     ```
 ---
+
 
 ## Installation Instructions  
 
