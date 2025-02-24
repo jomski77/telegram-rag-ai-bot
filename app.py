@@ -10,6 +10,7 @@ from query_data import query_rag, remove_think_block, clean_llm_formatting
 import os
 from dotenv import load_dotenv
 import logging
+import urllib3
 
 load_dotenv()
 
@@ -18,6 +19,15 @@ TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 logging.basicConfig(format="%(asctime)s - %(levelname)s - %(message)s", level=logging.INFO)
 
 app = Flask(__name__)
+
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)  # Change to logging.CRITICAL
+logging.getLogger("telegram").setLevel(logging.WARNING)  # Suppress telegram bot logs
+logging.getLogger("urllib3").setLevel(logging.WARNING)  # Suppress urllib3 logs
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)  # Optional: Disable SSL warnings
+logging.getLogger("httpx").setLevel(logging.WARNING)  # Suppress httpx logs
+
+
 socketio = SocketIO(app, cors_allowed_origins="*", async_mode='threading', transports=['polling'])
 #socketio = SocketIO(app, cors_allowed_origins="*", async_mode='eventlet', transports=['polling'])
 
