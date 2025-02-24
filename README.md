@@ -1,14 +1,13 @@
 
-## Telegram Monitoring and Real-Time Messaging Application  
+## Telegram + AI + RAG  
 
-This is a Flask-based web application designed to serve as a quick reference guide and messaging platform. The application integrates with Telegram using the python-telegram-bot library and provides real-time communication through Flask-SocketIO. It utilizes Retrieval-Augmented Generation (RAG) to enhance its querying and response capabilities, ensuring that users receive contextually relevant and accurate information derived from embedded documents and resources.
+This is a Flask-based application to serve as a local AI querying tool via Telegram messaging. The application integrates with Telegram using the python-telegram-bot library and provides real-time communication through Flask-SocketIO. It utilizes Retrieval-Augmented Generation (RAG) to enhance its querying and response capabilities, ensuring that users receive contextually relevant and accurate information derived from embedded documents and resources.
 
 
 ---
 
 ## Overview  
-- Real-time tracking and logging of incoming Telegram messages.  
-- Displaying message interactions on a web-based interface using WebSocket communication.  
+- Real-time logging of incoming Telegram messages.  
 - Managing embedded data storage for efficient query handling.  
 
 ---
@@ -18,8 +17,8 @@ This is a Flask-based web application designed to serve as a quick reference gui
 - **Python Version**: 3.10 (recommended)  
 - **Telegram Bot Token**: Obtain this using [BotFather](https://t.me/botfather) on Telegram. (Included)  
 - **Python Packages**: Listed under "Required Packages" below.  
-- **Required Models:** Ensure the following models are installed in Ollama: (Change the used model in the '.env' file)
-    - deepseek-r1:1.5b (or other models)
+- **Required Models:** Ensure that Ollama is installed with the following models: (Change the used model in the '.env' file)
+    - deepseek-r1:1.5b (or others)
     - nomic-embed-text
 
 
@@ -69,9 +68,8 @@ This is a Flask-based web application designed to serve as a quick reference gui
 ## Project Structure and Purpose  
 
 - **app.py**:  
-    The primary application file responsible for:  
-      - Monitoring all incoming Telegram messages.  
-      - Tracking outgoing responses.  
+    The Flask application file responsible for:  
+      - Monitoring all incoming Telegram messages.        
       - Displaying interactions on the web interface using Flask-SocketIO.  
 
 - **populate_database.py**:  
